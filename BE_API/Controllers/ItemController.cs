@@ -22,6 +22,14 @@ public class ItemController : ControllerBase
     {
         return _itemRepository.GetAll().ToList();
     }
+    
+    [HttpGet]
+    [Route("/xml")]
+    [Produces("application/xml")]
+    public ActionResult<IList<Item>> GetXml()
+    {
+        return _itemRepository.GetAll().ToList();
+    }
 
     [HttpGet]
     [Route("/{id}")]
